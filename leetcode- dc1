@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> sequentialDigits(int low, int high) {
+        string s="123456789";
+        vector<int> ans;
+        for(int len=2;len<=s.length();len++){
+            for(int startIdx=0;startIdx<=s.length()-len;startIdx++){
+                string temp=s.substr(startIdx,len);
+                int poss=stoi(temp);
+                if(poss>=low && poss<=high) ans.push_back(poss);
+            }
+        }
+        return ans;
+    }
+};
